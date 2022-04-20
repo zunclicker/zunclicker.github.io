@@ -290,6 +290,8 @@
 				if (typeof savedGame.grandmas !== "undefined") grandmas = savedGame.grandmas;
 				if (typeof savedGame.cardCost !== "undefined") cardCost = savedGame.cardCost;
 				if (typeof savedGame.cards !== "undefined") cards = savedGame.cards;
+				if (typeof savedGame.plushCost !== "undefined") plushCost = savedGame.plushCost;
+				if (typeof savedGame.plushies !== "undefined") plushies = savedGame.plushies;
 			};
 			
 			window.onload = function() {
@@ -304,6 +306,8 @@
 				document.getElementById("grandmas").innerHTML = grandmas;
 				document.getElementById("cards").innerHTML = cards;
 				document.getElementById("cardcost").innerHTML = cardCost;
+				document.getElementById("plushies").innerHTML = plushies;
+				document.getElementById("plushcost").innerHTML = plushCost;
 			};
 			
 			function saveGame() {
@@ -317,7 +321,9 @@
 					grandmaCost: grandmaCost,
 					grandmas: grandmas,
 					cards: cards,
-					cardCost: cardCost
+					cardCost: cardCost,
+					plushies: plushies,
+					plushCost: plushCost
 				};
 				localStorage.setItem("gameSave", JSON.stringify(gameSave));
 			}
@@ -343,11 +349,24 @@
 				grandmas = 0;
 				cardCost = 10000;
 				cards = 0;
+				plushCost = 50000;
+				plushies = 0;
 			}
 			
 			setInterval(function() {
 				saveGame()
 				updateZCPerSecond()
+				document.getElementById("ZC").innerHTML = ZC;
+				document.getElementById("clickcost").innerHTML = clickCost;
+				document.getElementById("clicks").innerHTML = clicks;
+				document.getElementById("cursorcost").innerHTML = cursorCost;
+				document.getElementById("cursors").innerHTML = cursors;
+				document.getElementById("grandmacost").innerHTML = grandmaCost;
+				document.getElementById("grandmas").innerHTML = grandmas;
+				document.getElementById("cards").innerHTML = cards;
+				document.getElementById("cardcost").innerHTML = cardCost;
+				document.getElementById("plushies").innerHTML = plushies;
+				document.getElementById("plushcost").innerHTML = plushCost;
 			}, 100);
 	</script>
 		
