@@ -143,9 +143,19 @@
 					<td id="image"><img src="images/zuncard.png"></td>
 					<td id="nameAndCost">
 						<p>ZunCreditCard</p>
-						<p><span id="cardcost">100000</span> ZunCoins</td>
+						<p><span id="cardcost">10000</span> ZunCoins</td>
 					</td>
 					<td id="amount"><span id="cards">0</span></td>
+				</tr>
+			</table>
+			<table class="shopButton" onclick="buyPlush()">
+				<tr>
+					<td id="image"><img src="images/zunplush.png"></td>
+					<td id="nameAndCost">
+						<p>ZunPlush</p>
+						<p><span id="plushcost">50000</span> ZunCoins</td>
+					</td>
+					<td id="amount"><span id="plushies">0</span></td>
 				</tr>
 			</table>
 			<table class="shopButton" onclick="cheat()">
@@ -172,6 +182,8 @@
 			var grandmas = 0;
 			var cardCost = 10000;
 			var cards = 0;
+			var plushCost = 50000;
+			var plushies = 0;
 			
 			
 			document.body.onkeyup = function(e){
@@ -234,6 +246,19 @@
 					document.getElementById("ZC").innerHTML = ZC;
 					document.getElementById("cardcost").innerHTML = cardCost;
 					document.getElementById("cards").innerHTML = cards;
+					updateZCPerSecond();
+				}
+			};
+			
+			function buyPlush() {
+				if (ZC >= plushCost) {
+					ZC = ZC - plushCost;
+					plushies = plushies + 1;
+					plushCost = plushCost * 10;
+					
+					document.getElementById("ZC").innerHTML = ZC;
+					document.getElementById("plushcost").innerHTML = plushCost;
+					document.getElementById("plushies").innerHTML = plushies;
 					updateZCPerSecond();
 				}
 			};
