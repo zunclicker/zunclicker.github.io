@@ -87,9 +87,9 @@
 	<button onclick="saveGame();">Save Game</button><br>
 	<button onclick="resetGame();">Reset Game</button>
 	</div>
-	<h2>Version Zun.2</h2>
+	<h2>Version Zun.3</h2>
 	<p>Bugfixes:</p>
-	<p>Added ZunPlush</p>
+	<p>Added ZunPlush and fixed it cause im dumb and messed up</p>
 	<body>		
 		
 		<div class="stuff">
@@ -254,7 +254,7 @@
 				if (ZC >= plushCost) {
 					ZC = ZC - plushCost;
 					plushies = plushies + 1;
-					plushCost = plushCost * 10;
+					plushCost = plushCost * 20;
 					
 					document.getElementById("ZC").innerHTML = ZC;
 					document.getElementById("plushcost").innerHTML = plushCost;
@@ -270,7 +270,7 @@
 			};
 				
 			function updateZCPerSecond() {
-				ZCPerSecond = cursors + grandmas * 5 + cards * 25;
+				ZCPerSecond = cursors + grandmas * 5 + cards * 25 + plushies * 50;
 				document.getElementById("ZCPerSecond").innerHTML = ZCPerSecond;
 			};
 			
@@ -330,7 +330,7 @@
 			
 			
 			setInterval(function() {
-				ZC = ZC + cursors + grandmas * 5 + cards * 25;
+				ZC = ZC + cursors + grandmas * 5 + cards * 25 + plushies * 50;
 				document.getElementById("ZC").innerHTML = ZC;
 				document.title = "ZunClicker - " + ZC + " ZC";
 				saveGame()
